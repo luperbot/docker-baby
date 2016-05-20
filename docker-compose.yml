@@ -2,7 +2,13 @@ version: '2'
 services:
   python-flask:
     build: ./python-flask
+    hostname: "flaskapp"
     ports:
     - "5000:5000"
     volumes:
     - ./python-flask:/app
+    links:
+    - "rabbitmq"
+  rabbitmq:
+    image: "rabbitmq:latest"
+    hostname: "rabbitmq"
