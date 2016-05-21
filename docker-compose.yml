@@ -12,3 +12,10 @@ services:
   rabbitmq:
     image: "rabbitmq:latest"
     hostname: "rabbitmq"
+  node-express:
+      build: ./node-express
+      hostname: "expressapp"
+      volumes:
+      - ./node-express:/app
+      ports:
+      -  "3000:3000"
