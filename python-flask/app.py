@@ -20,7 +20,7 @@ def send_message(message):
 @app.route('/')
 def index():
     now = datetime.datetime.now()
-    message = 'Visitor came to your website @ {}.'.format(now)
+    message = 'Hello, Visitor came to your website @ {}.'.format(now)
     send_message(message)
     return 'Sent a message to rabbitmq: {}'.format(message)
 
